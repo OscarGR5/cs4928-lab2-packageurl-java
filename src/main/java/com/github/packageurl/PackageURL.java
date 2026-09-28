@@ -394,12 +394,10 @@ public final class PackageURL implements Serializable {
         return retVal;
     }
 
-    private static String validateName(final String type, final String value)
-        throws MalformedPackageURLException {
+    private static String validateName(final String type, final String value) throws MalformedPackageURLException {
 
         if (value.isEmpty()) {
-            throw new MalformedPackageURLException(
-                "The PackageURL name specified is invalid");
+            throw new MalformedPackageURLException("The PackageURL name specified is invalid");
         }
 
         return PackageNamePolicies.forType(type).normalize(value);
